@@ -70,8 +70,9 @@ article.media--type-remote-video {
 
 
 /* Styling for the default book module home page */
+/* article.node--type-book .node__content > nav, */
 nav.book-navigation {
-  ul.menu {
+  > ul {
     padding: 0;
     margin: 0;
     display: flex;
@@ -105,8 +106,18 @@ nav.book-navigation {
     width: 50%;
 }
 
+> ul.book-pager li.book-pager__item--previous {
+  text-align: left !important;
+}
+
+> ul.book-pager li.book-pager__item--next {
+  text-align: right !important;
+}
+
+
+
 .book-pager__item--center {
-  display: none;
+  display: none !important;
 }
 
 article.node--type-book .node__links {
@@ -121,10 +132,12 @@ article.node--type-book .node__links {
 
 ul.book-pager {
   text-align: center;
-  a {
+  flex-direction: row !important;
+
+  li.book-pager__item > a {
     display: inline-block;
     background-color: $red;
-    color: $white;
+    color: $white !important;
     padding: 0.5rem 0.75rem;
     border: 1px solid $red;
     border-radius: 6px;
